@@ -5,7 +5,9 @@ CEC Data Set check
 
 
 Usage
------
+=====
+
+```
 usage: ctks_check.py [-h] [-f FOLDER] [-q] [-o OUTPUT]
 
 optional arguments:
@@ -15,3 +17,10 @@ optional arguments:
   -q, --quiet           僅顯示錯誤訊息
   -o OUTPUT, --output OUTPUT
                         儲存異常結果
+
+```
+
+LICENSE
+=======
+
+MIT License
