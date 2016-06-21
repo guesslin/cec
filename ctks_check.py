@@ -86,9 +86,11 @@ def exist_cand(cuids, quid):
                 continue
             elif cuid[i] == int(quid[i]):
                 flag += 1
+            elif i == 2 and int(quid[i]) == 0:
+                flag += 1
             else:
                 break
-        if flag == 6:
+        if flag == len(quid)-1:
             return True
     return False
 
@@ -105,7 +107,9 @@ def main(args):
         with open(output, 'a+') as fout:
             for quid in tickets:
                 if not exist_cand(cands, quid):
-                    print >>fout, args.folder, '-'.join(quid[:-1]), quid[-1].strip()
+                    print >>fout, '{} {} {}'.format(args.folder,
+                                                    '-'.join(quid[:-1]),
+                                                    quid[-1].strip())
         print 'end of checking', args.folder
     else:
         print "no folder given"
